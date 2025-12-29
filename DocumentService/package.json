@@ -7,10 +7,10 @@
     "build": "./node_modules/.bin/tsc",
     "start": "node build/app.js",
     "dev": "tsc && node build/app.js",
-    "migrate:create": "npx ts-node ./node_modules/typeorm/cli.js migration:create ./src/storage/migrations/%npm_config_name%",
-    "migrate:generate": "npx ts-node ./node_modules/typeorm/cli.js migration:generate -d ./migration.config.js ./src/storage/migrations",
-    "migrate:run": "npx ts-node ./node_modules/typeorm/cli.js migration:run -d ./migration.config.js",
-    "migrate:revert": "npx ts-node ./node_modules/typeorm/cli.js migration:revert -d ./migration.config.js"
+    "migrate:create": "npx ts-node ./node_modules/typeorm/cli.js migration:create ./src/storage/migrations/$npm_config_name",
+    "migrate:generate": "npx ts-node ./node_modules/typeorm/cli.js migration:generate -d ./build/migration.config.js ./src/storage/migrations/$npm_config_name",
+    "migrate:run": "npx ts-node ./node_modules/typeorm/cli.js migration:run -d ./build//migration.config.js",
+    "migrate:revert": "npx ts-node ./node_modules/typeorm/cli.js migration:revert -d ./build/migration.config.js"
   },
   "keywords": [],
   "author": "Harshit Tiwari",
