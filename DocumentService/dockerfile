@@ -1,0 +1,15 @@
+FROM node:22-alpine
+
+RUN mkdir -p /documentService/app
+WORKDIR /documentService/app
+
+COPY package*.json /documentService/app
+
+RUN npm install
+
+COPY . /documentService/app
+
+ENV PORT=8000
+EXPOSE 8000
+
+CMD [ "npm", "start" ]
