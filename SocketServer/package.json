@@ -1,0 +1,31 @@
+{
+  "name": "socketserver",
+  "version": "1.0.0",
+  "description": "Socket server for collaborative text editor",
+  "main": "app.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "start": "node build/app.js",
+    "dev": "tsc && node build/app.js"
+  },
+  "keywords": [
+    "websocket",
+    "socket.io",
+    "operational transform"
+  ],
+  "author": "Harshit Tiwari",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bullmq": "^5.66.2",
+    "dotenv": "^17.2.3",
+    "quill-delta": "^5.1.0",
+    "redis": "^5.10.0",
+    "socket.io": "^4.8.3",
+    "uuid": "^13.0.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
