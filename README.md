@@ -23,7 +23,7 @@ The high level architecture involves the following key components:
 - **Object store** : Stores documents' contents. This project uses S3 for this.
 - **Message Queue** : Decouples and helps Websocket server and Document service communicate updates and acknowledgements. This project uses BullMQ for this.
 
-![Alt text](arch.png)
+![Alt text](assets/arch.png)
 
 Following is a typical flow of how Collab-Text works:
 
@@ -46,3 +46,34 @@ Following is a typical flow of how Collab-Text works:
 - BullMQ - background job processing library for Node.js based on Redis
 - PostgreSQL for document metadata perisitence
 - AWS S3 for storing document contents
+
+## Development setup
+
+You need to have [docker](https://docs.docker.com/get-started/get-docker/) installed to run this application via docker-compose.
+
+- Clone the repo and navigate to the project directory:
+
+```bash
+git clone https://github.com/harshitntiwari/Collaborative-Text-Editor.git
+cd Collaborative-Text-Editor
+```
+
+- Copy env variables from .env.example and edit them:
+
+```bash
+cp .env.example .env
+```
+
+- Run the following docker-compose command. This will start up two services and their dependecies all in their separate docker containers
+
+```bash
+docker-compose up -d
+```
+
+- If the application started successfully, you should see four containers running by listing them:
+
+```bash
+docker ps
+```
+
+![containers-running](assets/containers.png)
