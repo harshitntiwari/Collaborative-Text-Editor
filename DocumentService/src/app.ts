@@ -32,9 +32,14 @@ async function startCoreModules() {
   });
 }
 
-initCoreModules().then(() => {
-  startCoreModules();
-});
+initCoreModules()
+  .then(() => {
+    startCoreModules();
+  })
+  .catch((err) => {
+    console.error("Failed to initialize DocumentService:", err);
+    process.exit(1);
+  });
 
 process.on("SIGINT", () => {
   controller.close().then(() => {
