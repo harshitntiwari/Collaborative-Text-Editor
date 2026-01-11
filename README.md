@@ -77,3 +77,9 @@ docker ps
 ```
 
 ![containers-running](assets/containers.png)
+
+- If you want to stop the services, simply run
+
+```bash
+docker-compose down
+```
